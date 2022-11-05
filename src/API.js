@@ -10,8 +10,8 @@ var baseURL;
 //     baseURL = "http://127.0.0.1:8000";
 // }
 // baseURL = "https://ethiopian-tourist-backend.herokuapp.com/";
-baseURL = "https://backend-indiantourism.herokuapp.com/";
-// baseURL = "http://127.0.0.1:8000";
+// baseURL = "https://backend-indiantourism.herokuapp.com/";
+baseURL = "http://127.0.0.1:8000";
 const api = axios.create({
   baseURL: baseURL,
   headers: {
@@ -56,9 +56,21 @@ export default class API {
     return categories;
   };
 
-  getWonders = async () => {
+  getWonders = async (search, category) => {
+    let url = "/wonders/";
+    let query = new URLSearchParams();
+    if (search) {
+      query.append("search", search);
+    }
+    if (category) {
+      query.append("category", category);
+    }
+
+    if (query.toString() != "") {
+      url += "?" + query.toString();
+    }
     const wonders = await api
-      .get("/wonders/")
+      .get(url)
       .then((response) => {
         return response.data;
       })
@@ -68,9 +80,21 @@ export default class API {
     return wonders;
   };
 
-  getAttractions = async () => {
+  getAttractions = async (search,category) => {
+    let url = "/attractions/";
+    let query = new URLSearchParams();
+    if (search) {
+      query.append("search", search);
+    }
+    if (category) {
+      query.append("category", category);
+    }
+
+    if (query.toString() != "") {
+      url += "?" + query.toString();
+    }
     const attractions = await api
-      .get("/attractions/")
+      .get(url)
       .then((response) => {
         return response.data;
       })

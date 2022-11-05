@@ -28,38 +28,13 @@ const Categorycard = ({ place }) => {
   }, []);
   return (
     <>
-      {/* <div class="gridcontent row">
-        <div class="image">
-          <img class="mainimage" src={place.image} alt="" />
-          <div class="like">
-            <img
-              src={Imglike}
-              onClick={() => {
-                clickFavourite(place);
-              }}
-              alt=""
-            />
-          </div>
-        </div>
-        <div class="textcontent">
-          <div class="gridheading">
-            <h1>{place.name}</h1>
-          </div>
-          <div class="gridsubheading">
-            <h2>{place.place_type}</h2>
-          </div>
-          <div class="gridtext">
-            <p>{place.description}</p>
-          </div>
-
-        </div>
-      </div> */}
+    
       <div class="row">
         <div class="image-container">
           <img
             src={place.image}
             alt=""
-            // onClick={() => dispatch(push("/places?category=" + place.id))}
+
           />
         </div>
         <div className="subrow">

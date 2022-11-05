@@ -17,10 +17,10 @@ const Search = () => {
       add = "details";
     }
     if (add === "/wonders") {
-      add = "details";
+      add = "detailswonders";
     }
     if (add === "/attractions") {
-      add = "details";
+      add = "detailsattr";
     }
     dispatch(push("/" + add + "?search=" + search));
   };

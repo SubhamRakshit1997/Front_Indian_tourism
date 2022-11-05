@@ -5,6 +5,10 @@
 body {
   position: relative;
 }
+a{
+  text-decoration: none;
+  
+}
 
 /**************
 Header
@@ -29,6 +33,12 @@ header .navbar {
   width: 100%;
   background-color: rgb(255, 255, 255, 0.5);
   z-index: 2;
+}
+header .navbar p {
+  cursor: pointer;
+}
+header .navbar p:hover {
+  text-decoration: underline;
 }
 .logo {
   display: flex;
@@ -585,9 +595,14 @@ nav .logo {
 
 /****Navbar**/
 
-nav .navbar p a {
+nav .navbar p {
   text-decoration: none;
   color: black;
+  transition: transform 0.9s;
+}
+nav .navbar p:hover{
+  transform: scale(1.25);
+  opacity: 100%;
 }
 #nic {
   text-decoration: none;
